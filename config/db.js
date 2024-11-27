@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017/vercel_demo")
+  .connect(
+    "mongodb+srv://clubcourierinternational:Smit123@clubdemo.nrzzh.mongodb.net/?retryWrites=true&w=majority&appName=ClubDemo"
+  )
   .then(() => {
     console.log("MongoDB Connected Succesfully!");
   })

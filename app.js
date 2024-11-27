@@ -30,6 +30,3 @@ app.get("/success", async (req, res) => {
 });
 
 module.exports = app;
-// app.listen("1234", () => {
-//   console.log("Server Started on http://localhost:1234");
-// });
