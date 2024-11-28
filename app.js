@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/success", async (req, res) => {
-  console.log('1');
+    const { name } = req.query;
+  console.log(name);
 });
 // app.get("/success", async (req, res) => {
 //   const { name } = req.query;
