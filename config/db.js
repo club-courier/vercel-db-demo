@@ -27,7 +27,7 @@ const connectDB = async () => {
 
   try {
     const db = await mongoose.connect(
-      "mongodb+srv://clubcosfonal:Smisffs3@clubdemo.nrzzh.mongodb.net/?retryWrites=true&w=majority&appName=ClubDemo"
+      "mongodb+srv://clubcourierinternational:Smit123@clubdemo.nrzzh.mongodb.net/?retryWrites=true&w=majority&appName=ClubDemo"
     );
     isConnected = db.connections[0].readyState;
     console.log("MongoDB Connected Successfully!");
