@@ -1,23 +1,6 @@
-// const mongoose = require("mongoose");
-// console.log("DB File Loaded Start");
-// mongoose
-//   .connect(
-//     "mongodb+srv://clubcourierinternational:Smit123@clubdemo.nrzzh.mongodb.net/?retryWrites=true&w=majority&appName=ClubDemo"
-//   )
-//   .then(() => {
-//     console.log("MongoDB Connected Succesfully!");
-//   })
-//   .catch((err) => {
-//     console.error("Error connecting to MongoDB:", err.message);
-//   });
-// console.log("DB File Loaded Ending");
-
-
 const mongoose = require("mongoose");
 
 let isConnected = false; // Track connection state
-
-console.log("DB File Loaded Start");
 
 const connectDB = async () => {
   if (isConnected) {
@@ -33,7 +16,9 @@ const connectDB = async () => {
     console.log("MongoDB Connected Successfully!");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err.message);
+    throw err; // Rethrow the error to handle it where `connectDB` is called
   }
 };
 
-connectDB().then(() => console.log("DB File Loaded Ending"));
+// Export the connection function
+module.exports = { connectDB };

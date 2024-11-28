@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 
 const path = require("path");
 
@@ -7,7 +8,7 @@ const hbs = require("hbs");
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
-require("./config/db");
+const { connectDB } =  require("./config/db");
 const NameModel = require("./models/add_name");
 
 app.get("/", (req, res) => {
