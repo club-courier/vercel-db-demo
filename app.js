@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 app.get("/success", async (req, res) => {
   const { name } = req.query;
   console.log(name);
+  await connectDB();
 });
 // app.get("/success", async (req, res) => {
 //   const { name } = req.query;
