@@ -7,13 +7,9 @@ const hbs = require("hbs");
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
-// app.use(express.urlencoded({ extended: true }));
+require("./config/db");
+const NameModel = require("./models/add_name");
 
-// const mongoose = require("mongoose");
-// const NameModel = require("./models/add_name");
-// require("./config/db");
-
-console.log("Server start Succesfully");
 app.get("/", (req, res) => {
   res.render("home");
 });
