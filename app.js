@@ -9,7 +9,6 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
 const { connectDB } = require("./config/db");
-await connectDB();
 const NameModel = require("./models/add_name");
 
 app.get("/", (req, res) => {
@@ -20,22 +19,15 @@ app.get("/success", async (req, res) => {
   const { name } = req.query;
 
   try {
-    // First, ensure the database is connected
     await connectDB();
     console.log("Database connected successfully.");
 
-    // Create a new name entry and save it to the DB
     const newName = new NameModel({ name });
-    await newName.save(); // Save to the database
-
+    await newName.save();
     console.log("Name added to DB:", name);
-
-    // Render the response with a success message
     res.render("home", { message: `Name "${name}" added successfully!` });
   } catch (err) {
     console.error("Error saving name:", err.message);
-
-    // If an error occurs, render the page with an error message
     res.render("home", { message: "Failed to save name. Please try again." });
   }
 });
