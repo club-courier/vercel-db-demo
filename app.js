@@ -6,9 +6,6 @@ const path = require("path");
 const hbs = require("hbs");
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
-app.get("/", (req, res) => {
-  res.render("home");
-});
 
 // app.use(express.urlencoded({ extended: true }));
 
@@ -16,10 +13,13 @@ app.get("/", (req, res) => {
 // const NameModel = require("./models/add_name");
 // require("./config/db");
 
-// app.get("/", (req, res) => {
-//   res.render("home");
-// });
+app.get("/", (req, res) => {
+  res.render("home");
+});
 
+app.get("/success", async (req, res) => {
+  console.log('1');
+});
 // app.get("/success", async (req, res) => {
 //   const { name } = req.query;
 
