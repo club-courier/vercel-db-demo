@@ -9,9 +9,7 @@ const connectDB = async () => {
   }
 
   try {
-    const db = await mongoose.connect(
-      "mongodb+srv://clubcourierinternational:Smit123@clubdemo.nrzzh.mongodb.net/?retryWrites=true&w=majority&appName=ClubDemo"
-    );
+    const db = await mongoose.connect(process.env.DB_URL);
     isConnected = db.connections[0].readyState;
     console.log("MongoDB Connected Successfully!");
   } catch (err) {
