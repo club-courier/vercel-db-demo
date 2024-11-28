@@ -13,12 +13,13 @@ app.set("views", path.join(__dirname, "views"));
 // const NameModel = require("./models/add_name");
 // require("./config/db");
 
+console.log("Server start Succesfully");
 app.get("/", (req, res) => {
   res.render("home");
 });
 
 app.get("/success", async (req, res) => {
-    const { name } = req.query;
+  const { name } = req.query;
   console.log(name);
 });
 // app.get("/success", async (req, res) => {
